@@ -1,0 +1,425 @@
+/* ============================================
+   CLOTH BILLING APP - THEME COLLECTION
+   15 Beautiful Themes Inspired by Open Source Design Systems
+   ============================================ */
+
+/* Theme 1: Light (Fabric Theme) - Default */
+[data-theme="light"] {
+    --color-primary: #6B4E71;
+    --color-primary-light: #8B6E91;
+    --color-primary-dark: #4A2E4F;
+    --color-secondary: #D4A574;
+    --color-accent: #E8B4A0;
+    --color-success: #7FB069;
+    --color-warning: #F4A261;
+    --color-error: #E76F51;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --text-primary: #171717;
+    --text-secondary: #525252;
+}
+
+/* Theme 2: Dark (Minimal Theme) */
+[data-theme="dark"] {
+    --color-primary: #8B5CF6;
+    --color-primary-light: #A78BFA;
+    --color-primary-dark: #7C3AED;
+    --color-secondary: #64748B;
+    --color-accent: #F59E0B;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+}
+
+/* Theme 3: Material Blue (Inspired by Material Design) */
+[data-theme="material-blue"] {
+    --color-primary: #2196F3;
+    --color-primary-light: #64B5F6;
+    --color-primary-dark: #1976D2;
+    --color-secondary: #FF9800;
+    --color-accent: #4CAF50;
+    --color-success: #4CAF50;
+    --color-warning: #FF9800;
+    --color-error: #F44336;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+}
+
+/* Theme 4: Ocean Blue (Inspired by Tailwind) */
+[data-theme="ocean-blue"] {
+    --color-primary: #0EA5E9;
+    --color-primary-light: #38BDF8;
+    --color-primary-dark: #0284C7;
+    --color-secondary: #06B6D4;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+}
+
+/* Theme 5: Forest Green (Nature Theme) */
+[data-theme="forest-green"] {
+    --color-primary: #059669;
+    --color-primary-light: #10B981;
+    --color-primary-dark: #047857;
+    --color-secondary: #84CC16;
+    --color-accent: #F59E0B;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F0FDF4;
+    --text-primary: #064E3B;
+    --text-secondary: #047857;
+}
+
+/* Theme 6: Sunset Orange (Warm Theme) */
+[data-theme="sunset-orange"] {
+    --color-primary: #F97316;
+    --color-primary-light: #FB923C;
+    --color-primary-dark: #EA580C;
+    --color-secondary: #F59E0B;
+    --color-accent: #EF4444;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FFF7ED;
+    --text-primary: #7C2D12;
+    --text-secondary: #9A3412;
+}
+
+/* Theme 7: Royal Purple (Premium Theme) */
+[data-theme="royal-purple"] {
+    --color-primary: #7C3AED;
+    --color-primary-light: #A78BFA;
+    --color-primary-dark: #6D28D9;
+    --color-secondary: #EC4899;
+    --color-accent: #F59E0B;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAF5FF;
+    --text-primary: #4C1D95;
+    --text-secondary: #6D28D9;
+}
+
+/* Theme 8: Rose Pink (Elegant Theme) */
+[data-theme="rose-pink"] {
+    --color-primary: #E11D48;
+    --color-primary-light: #F43F5E;
+    --color-primary-dark: #BE123C;
+    --color-secondary: #EC4899;
+    --color-accent: #F59E0B;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FFF1F2;
+    --text-primary: #881337;
+    --text-secondary: #BE123C;
+}
+
+/* Theme 9: Slate Gray (Professional Theme) */
+[data-theme="slate-gray"] {
+    --color-primary: #475569;
+    --color-primary-light: #64748B;
+    --color-primary-dark: #334155;
+    --color-secondary: #0EA5E9;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+}
+
+/* Theme 10: Emerald Green (Fresh Theme) */
+[data-theme="emerald-green"] {
+    --color-primary: #10B981;
+    --color-primary-light: #34D399;
+    --color-primary-dark: #059669;
+    --color-secondary: #14B8A6;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #ECFDF5;
+    --text-primary: #064E3B;
+    --text-secondary: #047857;
+}
+
+/* Theme 11: Indigo Blue (Modern Theme) */
+[data-theme="indigo-blue"] {
+    --color-primary: #4F46E5;
+    --color-primary-light: #6366F1;
+    --color-primary-dark: #4338CA;
+    --color-secondary: #8B5CF6;
+    --color-accent: #F59E0B;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #EEF2FF;
+    --text-primary: #312E81;
+    --text-secondary: #4338CA;
+}
+
+/* Theme 12: Amber Gold (Luxury Theme) */
+[data-theme="amber-gold"] {
+    --color-primary: #D97706;
+    --color-primary-light: #F59E0B;
+    --color-primary-dark: #B45309;
+    --color-secondary: #FCD34D;
+    --color-accent: #EF4444;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FFFBEB;
+    --text-primary: #78350F;
+    --text-secondary: #92400E;
+}
+
+/* Theme 13: Teal Cyan (Cool Theme) */
+[data-theme="teal-cyan"] {
+    --color-primary: #14B8A6;
+    --color-primary-light: #5EEAD4;
+    --color-primary-dark: #0D9488;
+    --color-secondary: #06B6D4;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F0FDFA;
+    --text-primary: #134E4A;
+    --text-secondary: #0D9488;
+}
+
+/* Theme 14: Crimson Red (Bold Theme) */
+[data-theme="crimson-red"] {
+    --color-primary: #DC2626;
+    --color-primary-light: #EF4444;
+    --color-primary-dark: #B91C1C;
+    --color-secondary: #F97316;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FEF2F2;
+    --text-primary: #991B1B;
+    --text-secondary: #B91C1C;
+}
+
+/* Theme 15: Midnight Blue (Deep Theme) */
+[data-theme="midnight-blue"] {
+    --color-primary: #1E40AF;
+    --color-primary-light: #3B82F6;
+    --color-primary-dark: #1E3A8A;
+    --color-secondary: #6366F1;
+    --color-accent: #8B5CF6;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #EFF6FF;
+    --text-primary: #1E3A8A;
+    --text-secondary: #1E40AF;
+}
+
+/* Apply theme colors to components */
+[data-theme] {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme] .navbar {
+    background-color: var(--color-primary);
+    border-bottom-color: var(--color-primary-dark);
+}
+
+[data-theme] .navbar .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme] .navbar .nav-link:hover,
+[data-theme] .navbar .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+[data-theme] .navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+[data-theme] .navbar .logo-icon,
+[data-theme] .navbar .brand-text {
+    color: white;
+}
+
+[data-theme] .card {
+    background-color: var(--bg-primary);
+    border-color: var(--color-neutral-200);
+}
+
+[data-theme] .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+[data-theme] .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+[data-theme] .btn-secondary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+/* Nav-link active state is handled above for navbar */
+
+[data-theme] .form-input:focus,
+[data-theme] .form-select:focus,
+[data-theme] .form-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+[data-theme] .toast.success {
+    background-color: var(--color-success);
+}
+
+[data-theme] .toast.error {
+    background-color: var(--color-error);
+}
+
+[data-theme] .toast.warning {
+    background-color: var(--color-warning);
+}
+
+[data-theme] .items-table thead {
+    background-color: var(--color-primary);
+}
+
+[data-theme] .summary-total-row {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --color-neutral-50: #1E293B;
+    --color-neutral-100: #334155;
+    --color-neutral-200: #475569;
+    --color-neutral-300: #64748B;
+    --color-neutral-400: #94A3B8;
+    --color-neutral-500: #CBD5E1;
+    --color-neutral-600: #E2E8F0;
+    --color-neutral-700: #F1F5F9;
+    --color-neutral-800: #F8FAFC;
+    --color-neutral-900: #FFFFFF;
+}
+
+/* Ensure navbar text is always visible on dark theme */
+[data-theme="dark"] .navbar .nav-link {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .navbar .nav-link:hover,
+[data-theme="dark"] .navbar .nav-link:focus,
+[data-theme="dark"] .navbar .nav-link.active {
+    color: white;
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--bg-secondary);
+    border-color: var(--color-neutral-700);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+    background-color: var(--bg-secondary);
+    border-color: var(--color-neutral-600);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .table {
+    background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .items-table tbody tr {
+    border-bottom-color: var(--color-neutral-700);
+}
+
+/* Theme Preview Styles */
+.theme-preview {
+    margin-top: var(--spacing-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: var(--spacing-3);
+}
+
+.theme-preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2);
+    border: 2px solid var(--color-neutral-300);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background: var(--bg-primary);
+}
+
+.theme-preview-item:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-preview-item.active {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.theme-color {
+    width: 100%;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-preview-item span {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+    text-align: center;
+}
+

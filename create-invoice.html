@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Invoice - Cloth Billing App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/invoice.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <rect width="32" height="32" fill="currentColor" opacity="0.1" rx="4"/>
+                    <path d="M8 12h16v2H8zm0 4h16v2H8zm0 4h12v2H8z" fill="currentColor"/>
+                </svg>
+                <span class="brand-text">Cloth Billing</span>
+            </div>
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="dashboard.html" class="nav-link" role="menuitem">Dashboard</a></li>
+                <li role="none"><a href="create-invoice.html" class="nav-link active" aria-current="page" role="menuitem">Create Invoice</a></li>
+                <li role="none"><a href="customers.html" class="nav-link" role="menuitem">Customers</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem">Products</a></li>
+                <li role="none"><a href="settings.html" class="nav-link" role="menuitem">Settings</a></li>
+            </ul>
+            <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <circle cx="10" cy="10" r="4"/>
+                    <path d="M10 2v2M10 16v2M18 10h-2M4 10H2M15.66 4.34l-1.41 1.41M5.75 14.25l-1.41 1.41M15.66 15.66l-1.41-1.41M5.75 5.75l-1.41-1.41"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1 id="invoice-page-title">Create Invoice</h1>
+                <p class="subtitle">Generate a new invoice for your customer</p>
+            </header>
+
+            <form id="invoice-form" class="invoice-form">
+                <!-- Invoice Header -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Invoice Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="customer-select" class="form-label required">Customer</label>
+                                <div class="input-group">
+                                    <select id="customer-select" class="form-select" required>
+                                        <option value="">Select or create customer</option>
+                                    </select>
+                                    <button type="button" class="btn btn-outline" onclick="openAddCustomerModal()">+ Add</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="invoice-number" class="form-label required">Invoice Number</label>
+                                <div class="input-group">
+                                    <input type="text" id="invoice-number" class="form-input" required readonly style="background: var(--color-neutral-50);">
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="regenerateInvoiceNumber()" title="Generate new invoice number">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 8a7 7 0 0 1 7-7v2M15 8a7 7 0 0 1-7 7v-2M8 1l2 2-2 2M8 15l-2-2 2-2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="form-help">Invoice number is generated automatically. Click refresh to generate a new one.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="invoice-date" class="form-label required">Invoice Date</label>
+                                <input type="date" id="invoice-date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="transport-name" class="form-label">Transport Name</label>
+                                <input type="text" id="transport-name" class="form-input" placeholder="Auto-filled from customer">
+                                <span class="form-help">Automatically populated from customer database. You can edit if needed.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bundles" class="form-label">No. of Bundles</label>
+                                <input type="number" id="bundles" class="form-input" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Customer Details (Auto-filled) -->
+                        <div id="customer-details" class="customer-details hidden">
+                            <h3>Customer Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Address</label>
+                                    <div id="customer-address" class="form-textarea" style="min-height: 60px; background: var(--color-neutral-50);" readonly></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">GST Number</label>
+                                    <div id="customer-gst" class="form-input" style="background: var(--color-neutral-50);" readonly></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">State</label>
+                                    <div id="customer-state" class="form-input" style="background: var(--color-neutral-50);" readonly></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GST Toggle -->
+                        <div class="form-group">
+                            <label class="form-checkbox-label">
+                                <input type="checkbox" id="gst-enabled" class="form-checkbox">
+                                <span>Enable GST Invoice</span>
+                            </label>
+                        </div>
+
+                        <!-- GST Fields (shown when enabled) -->
+                        <div id="gst-fields" class="gst-fields hidden">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="eway-bill" class="form-label">E-way Bill No</label>
+                                    <input type="text" id="eway-bill" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Items Table -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Items</h2>
+                        <div style="display: flex; gap: 8px;">
+                            <button type="button" class="btn btn-sm btn-outline" onclick="openProductSelector()">Browse Products</button>
+                            <button type="button" class="btn btn-sm btn-primary" onclick="addInvoiceItem()">+ Add Item</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table" id="items-table" role="table" aria-label="Invoice items">
+                                <thead>
+                                    <tr>
+                                        <th>Sr. No.</th>
+                                        <th>Item</th>
+                                        <th>HSN</th>
+                                        <th>Size</th>
+                                        <th>Qty</th>
+                                        <th>Rate</th>
+                                        <th>Amount</th>
+                                        <th>GST</th>
+                                        <th>Total</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="items-tbody">
+                                    <!-- Items will be added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Summary -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Summary</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="summary-label">Subtotal:</span>
+                                <span class="summary-value" id="subtotal">₹0.00</span>
+                            </div>
+                            <div id="gst-summary" class="hidden">
+                                <div class="summary-item" id="cgst-row">
+                                    <span class="summary-label">CGST (2.5%):</span>
+                                    <span class="summary-value" id="cgst-amount">₹0.00</span>
+                                </div>
+                                <div class="summary-item" id="sgst-row">
+                                    <span class="summary-label">SGST (2.5%):</span>
+                                    <span class="summary-value" id="sgst-amount">₹0.00</span>
+                                </div>
+                                <div class="summary-item" id="igst-row">
+                                    <span class="summary-label">IGST (5%):</span>
+                                    <span class="summary-value" id="igst-amount">₹0.00</span>
+                                </div>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Round Off:</span>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="number" id="round-off" class="form-input" style="width: 120px; text-align: right;" step="0.01" value="0.00" onchange="updateRoundOff()">
+                                    <button type="button" class="btn btn-sm btn-outline" onclick="autoCalculateRoundOff()" title="Auto-calculate round off">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 8a7 7 0 0 1 7-7v2M15 8a7 7 0 0 1-7 7v-2M8 1l2 2-2 2M8 15l-2-2 2-2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="form-help" style="display: block; margin-top: 4px; font-size: 12px;">Manually adjust or click refresh to auto-calculate</span>
+                            </div>
+                            <div class="summary-item summary-total">
+                                <span class="summary-label">Grand Total:</span>
+                                <span class="summary-value" id="grand-total">₹0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Total in Words:</span>
+                                <span class="summary-value" id="total-words">Zero Rupees Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Actions -->
+                <div class="card-footer">
+                    <button type="button" class="btn btn-outline" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="button" class="btn btn-secondary" onclick="saveInvoice(false)">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="saveInvoice(true)">Save & Print</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cloth Billing App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/invoice.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Cloth Billing App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <rect width="32" height="32" fill="currentColor" opacity="0.1" rx="4"/>
+                    <path d="M8 12h16v2H8zm0 4h16v2H8zm0 4h12v2H8z" fill="currentColor"/>
+                </svg>
+                <span class="brand-text">Cloth Billing</span>
+            </div>
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="dashboard.html" class="nav-link" role="menuitem">Dashboard</a></li>
+                <li role="none"><a href="create-invoice.html" class="nav-link" role="menuitem">Create Invoice</a></li>
+                <li role="none"><a href="customers.html" class="nav-link active" aria-current="page" role="menuitem">Customers</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem">Products</a></li>
+                <li role="none"><a href="settings.html" class="nav-link" role="menuitem">Settings</a></li>
+            </ul>
+            <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <circle cx="10" cy="10" r="4"/>
+                    <path d="M10 2v2M10 16v2M18 10h-2M4 10H2M15.66 4.34l-1.41 1.41M5.75 14.25l-1.41 1.41M15.66 15.66l-1.41-1.41M5.75 5.75l-1.41-1.41"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Customers</h1>
+                <p class="subtitle">Manage your customer database</p>
+            </header>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Customer List</h2>
+                    <button class="btn btn-primary" onclick="openAddCustomerModal()">+ Add Customer</button>
+                </div>
+                <div class="card-body">
+                    <div class="search-box">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                            <circle cx="9" cy="9" r="6"/>
+                            <path d="M13 13l4 4"/>
+                        </svg>
+                        <input type="text" id="customer-search" class="form-input" placeholder="Search customers..." aria-label="Search customers">
+                    </div>
+                    <div class="table-container">
+                        <table class="table" role="table" aria-label="Customer list">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>GST Number</th>
+                                    <th>State</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customer-table-body">
+                                <!-- Customers will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cloth Billing App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/customers.js"></script>
+</body>
+</html>
+
+
+
